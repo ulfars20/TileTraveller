@@ -36,17 +36,50 @@ def east(x, y):
 def south(x, y):
     if y == 1:
         return False
-    elif x == 2 and y == 3:
+    elif x == 1 and y == 3:
         return False
     else: 
         return True
 
 def west(x, y):
-    if x != 1 and x >= y:
+    if x != 1 and y >= x:
         return True
     else:
         return False 
 
-x = 1, y = 1
+x = 1
+y = 1
 
+while True:
+    print('You can travel: ', end='')
+    n = north(x, y)
+    e = east(x, y)
+    s = south(x, y)
+    w = west(x, y)
     
+    if n == True:
+        print('(N)orth', end='')
+    if e == True:
+        print('(E)ast', end='')
+    if s == True:
+        print('(S)outh', end='')
+    if w == True:
+        print('(W)est', end='')
+    print()
+    direction = input('Direction:')
+    direction = direction.lower()
+    if direction == 'n' or direction == 'e' or direction == 's' or direction == 'w':
+        if direction == 'n':
+            y += 1
+        if direction == 'e':
+            x += 1
+        if direction == 's':
+            y -= 1
+        if direction == 'w':
+            x -= 1
+        
+    else:
+        print('Not a valid direction')
+    print(f'{x} {y}')
+
+
