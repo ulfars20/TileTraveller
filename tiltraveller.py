@@ -33,7 +33,7 @@ def east(x, y):
 def south(x, y):
     if y == 1:
         return False
-    elif x == 1 and y == 3:
+    elif x == 2 and y == 3:
         return False
     else: 
         return True
@@ -54,24 +54,18 @@ while True:
     s = south(x, y)
     w = west(x, y)
     
-    if n == True:
+    if n == True and e == False and s == False and w == False:
         print('(N)orth', end='')
-    if e == True or s == True or w == True:
-        print(' or ', end='')
-
-    if e == True:
-        print('(E)ast', end='')
-    if  s == True or w == True:
-        print(' or ', end='')
-
-    if s == True:
-        print('(S)outh', end='')
-    if w == True:
-        print(' or ', end='')
-
-    if w == True:
-        print('(W)est', end='')
-
+    if n == True and e == True and s == True and w == False:
+        print('(N)orth or (E)ast or (S)outh', end='')
+    if e == True and s == True and n == False and w == False:
+        print('(E)ast or (S)outh', end='')
+    if e == True and w == True and n == False and s == False:
+        print('(E)ast or (W)est', end='')
+    if s == True and w == True and n == False and e == False:
+        print('(S)outh or (W)est', end='')
+    if n == True and s == True and w == False and e == False:
+        print('(N)orth or (S)outh', end='')        
     print('.', end='')
     print()
     direction = input('Direction: ')
@@ -86,14 +80,11 @@ while True:
         elif direction == 'w' and w == True:
              x -= 1
         else: 
-            print('Not a valid direction')
+            print('Not a valid direction!')
 
     else:
-        print('Not a valid direction')
-    print(f'{x} {y}')
+        print('Not a valid direction!')
 
     if x == 3 and y == 1:
-        print('Sælir, kallinn vann, njóttu dagsins gamli.')
+        print('Victory!')
         break
-
-
