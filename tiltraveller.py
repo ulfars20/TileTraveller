@@ -16,9 +16,6 @@
 # Call a function based on the input
 
 # If you are in 3, 1 then print Victory
-
-
-
 def north(x, y):
     if y==3:
         return False
@@ -65,21 +62,28 @@ while True:
         print('(S)outh', end='')
     if w == True:
         print('(W)est', end='')
+    print('.', end='')
     print()
-    direction = input('Direction:')
+    direction = input('Direction: ')
     direction = direction.lower()
     if direction == 'n' or direction == 'e' or direction == 's' or direction == 'w':
-        if direction == 'n':
-            y += 1
-        if direction == 'e':
-            x += 1
-        if direction == 's':
-            y -= 1
-        if direction == 'w':
-            x -= 1
-        
+        if direction == 'n' and n == True:
+             y += 1
+        elif direction == 'e' and e == True:
+             x += 1 
+        elif direction == 's' and s == True:
+             y -= 1
+        elif direction == 'w' and w == True:
+             x -= 1
+        else: 
+            print('Not a valid direction')
+
     else:
         print('Not a valid direction')
     print(f'{x} {y}')
+
+    if x == 3 and y == 1:
+        print('Sælir, kallinn vann, njóttu dagsins gamli.')
+        break
 
 
