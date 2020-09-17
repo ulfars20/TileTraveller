@@ -56,12 +56,22 @@ while True:
     
     if n == True:
         print('(N)orth', end='')
+    if e == True or s == True or w == True:
+        print(' or ', end='')
+
     if e == True:
         print('(E)ast', end='')
+    if  s == True or w == True:
+        print(' or ', end='')
+
     if s == True:
         print('(S)outh', end='')
     if w == True:
+        print(' or ', end='')
+
+    if w == True:
         print('(W)est', end='')
+
     print('.', end='')
     print()
     direction = input('Direction: ')
