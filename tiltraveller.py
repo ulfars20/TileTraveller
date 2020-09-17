@@ -16,3 +16,37 @@
 # Call a function based on the input
 
 # If you are in 3, 1 then print Victory
+
+
+
+def north(x, y):
+    if y==3:
+        return False
+    elif x == 2 and y == 2:
+        return False
+    else:
+        return True 
+
+def east(x, y):
+    if y>x:
+        return True
+    else:
+        return False
+
+def south(x, y):
+    if y == 1:
+        return False
+    elif x == 2 and y == 3:
+        return False
+    else: 
+        return True
+
+def west(x, y):
+    if x != 1 and x >= y:
+        return True
+    else:
+        return False 
+
+x = 1, y = 1
+
+    
